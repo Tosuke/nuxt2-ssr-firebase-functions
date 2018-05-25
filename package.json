@@ -1,0 +1,48 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Tosuke's blog",
+  "author": "Tosuke <tasukeprg@gmail.com>",
+  "private": true,
+  "main": "build/functions.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development backpack dev",
+    "serve": "run-s build deploy:cpx:* serve:firebase",
+    "serve:firebase": "firebase serve",
+    "start": "node build/main.js",
+    "build": "run-p build:*",
+    "build:nuxt": "nuxt build",
+    "build:backpack": "backpack build",
+    "deploy:clean": "rimraf '{functions,public}/*'",
+    "deploy:cpx:functions": "cpx '{package.json,{build,.nuxt,static}/**/*}' functions",
+    "deploy:cpx:hostings:assets": "cpx '.nuxt/dist/{*.js,img/**/*}' public",
+    "deploy:cpx:hostings:static": "cpx 'static/**/*' public",
+    "precommit": "npm run lint",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "cross-env": "^5.0.1",
+    "express": "^4.15.3",
+    "firebase-admin": "^5.12.1",
+    "firebase-functions": "^1.0.3",
+    "nuxt-edge": "^2.0.0-25452542.7f9d16c",
+    "source-map-support": "^0.4.15",
+    "util.promisify": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "backpack-core": "^0.4.1",
+    "cpx": "^1.5.0",
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^3.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "npm-run-all": "^4.1.3",
+    "rimraf": "^2.6.2"
+  }
+}
