@@ -1,11 +1,7 @@
 import express from 'express'
-import api from './api'
 
 export default ({ Nuxt, Builder }) => {
   const app = express()
-
-  // Import API Routes
-  app.use('/api', api)
 
   // Import and Set Nuxt.js options
   const config = require('../nuxt.config.js')
@@ -21,7 +17,14 @@ export default ({ Nuxt, Builder }) => {
   }
 
   // Give nuxt middleware to express
-  app.use(nuxt.render)
+  app.use((req, res) => {
+    res.setHeader('Cache-Control', 'public,max-age=150,s-maxage=150')
+    try {
+      nuxt.render(req, res)
+    } catch (err) {
+      console.error(err)
+    }
+  })
 
   return app
 }

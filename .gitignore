@@ -13,6 +13,10 @@ dist
 # Backpack build
 build
 
-# Firebase functions
-/functions
-/public
+# Firebase
+/dist
+/.firebaserc
+
+# Editors
+/.vscode
+

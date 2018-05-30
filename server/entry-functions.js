@@ -8,6 +8,5 @@ process.env.DEBUG = 'nuxt:*'
 const app = server({ Nuxt, Builder })
 
 export const index = functions.https.onRequest((req, res) => {
-  console.log(req.path)
   app(req, res)
 })

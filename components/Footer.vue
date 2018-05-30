@@ -1,5 +1,37 @@
 <template>
   <footer>
-    Visit our website for more documentation : <a href="https://nuxtjs.org" target="_blank">nuxtjs.org</a>
+    <div class="mui-container mui--text-center">
+      <div class="footer-flex-item">
+        Made by <a href="https://twitter.com/_tosuke_">Tosuke</a> (Original by <a href="https://www.davidroyer.me" target="_blank">David Royer</a>)
+      </div>
+      <div class="footer-flex-item">
+        Check out this project's <a href="https://github.com/Tosuke/nuxt2-ssr-firebase-functions" target="_blank">Github Repo</a>
+      </div>
+    </div>
   </footer>
 </template>
+
+<script>
+  export default {
+  }
+</script>
+
+<style lang="css">
+  footer {
+    box-sizing: border-box;
+    background-color: #eee;
+    border-top: 1px solid #e0e0e0;
+    padding: .5em 0;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65px;
+    z-index: 99;
+  }
+  .footer-flex-item {
+    margin: .5em;
+  }
+</style>

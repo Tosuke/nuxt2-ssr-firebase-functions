@@ -1,6 +1,6 @@
-# blog
+# Nuxt2 SSR
 
-> Tosuke's blog
+> Nuxt2 SSR on Firebase Functions
 
 ## Build Setup
 

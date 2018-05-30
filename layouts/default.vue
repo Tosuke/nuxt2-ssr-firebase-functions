@@ -1,52 +1,31 @@
 <template>
-  <div>
-    <nuxt/>
-    <my-footer/>
+  <div id="app-wrapper">
+    <app-header></app-header>
+    <div id="content-wrapper" class="mui--text-center">
+      <nuxt class="mui-container"/>
+    </div>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import MyFooter from '~/components/Footer.vue'
-
-export default {
-  components: {
-    MyFooter
+  import AppFooter from '@/components/Footer'
+  import AppHeader from '@/components/Header'
+  export default {
+    components: { AppHeader, AppFooter },
+    methods: {
+      reloadPage () {
+        window.location.reload()
+      }
+    }
   }
-}
 </script>
 
 <style>
-.container
-{
-  margin: 0;
-  width: 100%;
-  padding: 100px 0;
-  text-align: center;
-}
-
-.button, .button:visited
-{
-  display: inline-block;
-  color: black;
-  letter-spacing: 1px;
-  background-color: #fff;
-  border: 2px solid #000;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 15px 45px;
-}
-
-.button:hover, .button:focus
-{
-  color: #fff;
-  background-color: #000;
-}
-
-.title
-{
-  color: #000;
-  font-weight: 300;
-  font-size: 2.5em;
-  margin: 0;
-}
+  #app-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
 </style>
+
