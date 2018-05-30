@@ -1,7 +1,7 @@
 {
-  "name": "blog",
+  "name": "nuxt2-fcf",
   "version": "1.0.0",
-  "description": "Tosuke's blog",
+  "description": "Nuxt on FCF(Firebase Cloud Functions)",
   "author": "Tosuke <tasukeprg@gmail.com>",
   "private": true,
   "main": "build/functions.js",
