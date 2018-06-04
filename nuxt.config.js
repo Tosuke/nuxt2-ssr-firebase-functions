@@ -35,6 +35,7 @@ module.exports = {
   css: ['~/assets/styles/main.css'],
 
   build: {
+    cache: true,
     babel: {
       presets: [
         [
